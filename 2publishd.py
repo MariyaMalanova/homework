@@ -15,5 +15,5 @@ while True:
             initial = False
         values.pop(0)
         values.append(data[0])
-        client.publish("lab/manka12/photo/average", mean(values))
+        client.publish("lab/manka12/photo/averge", mean(values))
 client.disconnect()
