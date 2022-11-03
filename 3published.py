@@ -9,7 +9,7 @@ steps = 0
 broker="broker.emqx.io"
 client = mqtt_client.Client()
 client.connect(broker)
-ser = serial.Serial("COM5", timeout=1)
+ser = serial.Serial("COM6", timeout=1)
 
 while True:
     if ser.in_waiting > 0:
