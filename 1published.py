@@ -9,7 +9,7 @@ initial = True
 while True:
     if ser.in_waiting > 0:
         data = ser.read(1)
-        client.publish('lab/manka/photo/instant', data[0])
+        client.publish('lab/manka12/photo/instant', data[0])
         if initial:
             values = [data[0] for i in range(100)]
             initial = False
