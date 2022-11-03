@@ -5,7 +5,7 @@ from statistics import mean
 import serial
 
 lst = []
-ser = serial.Serial("COM5", timeout=1)
+ser = serial.Serial("COM6", timeout=1)
 
 def on_message(client, userdata, message):
     data = str(message.payload.decode("utf-8"))
