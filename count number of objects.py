@@ -48,5 +48,6 @@ for i in range(0, len(mask)):
     all_numbers += s
 print("All number of objects:", all_numbers)
 
+
 #plt.imshow(labeled)
 #plt.show()
