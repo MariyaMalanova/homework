@@ -6,6 +6,25 @@ from skimage.morphology import binary_erosion
 image = np.load("ps.npy.txt")
 labeled = label(image)
 
+mask1 = np.array([
+  np.array([
+    [1, 1, 1, 1, 1 ],
+    [1, 1, 1, 1, 1 ],
+    [1, 0, 0, 0, 1 ],
+    [1, 0, 0, 0, 1]]),
+  np.array([
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1]])],
+    dtype=object)
+     
+mask2 = np.array([
+    [1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1]])
+
 mask3 = np.array([
   np.array([
     [1, 1, 1, 1, 1],
@@ -25,25 +44,6 @@ mask3 = np.array([
     [1, 1, 0, 0],
     [1, 1, 1, 1]])],
     dtype=object)
-
-mask1 = np.array([
-  np.array([
-    [1, 1, 1, 1, 1 ],
-    [1, 1, 1, 1, 1 ],
-    [1, 0, 0, 0, 1 ],
-    [1, 0, 0, 0, 1]]),
-  np.array([
-    [1, 0, 0, 0, 1],
-    [1, 0, 0, 0, 1],
-    [1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1]])],
-    dtype=object)
-     
-mask2 = np.array([
-    [1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1]])
 
 all_numbers = 0
 numbers =[0]
