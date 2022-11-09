@@ -20,10 +20,11 @@ labeled = label(stars)
 
 er = binary_erosion(labeled, mask)
 er = label(er)
-print(er.max())
 
 er2 = binary_erosion(labeled, mask2)
 er2 = label(er2)
+
+print(er.max())
 print(er2.max())
 
 plt.imshow(stars)
