@@ -3,6 +3,9 @@ import numpy as np
 from skimage.measure import label
 from skimage.morphology import binary_erosion
 
+stars = np.load("stars.npy")
+labeled = label(stars)
+
 mask = [[0, 0, 1, 0, 0],
         [0, 0, 1, 0, 0],
         [1, 1, 1, 1, 1],
@@ -14,9 +17,6 @@ mask2 = [[1, 0, 0, 0, 1],
         [0, 0, 1, 0, 0],
         [0, 1, 0, 1, 0],
         [1, 0, 0, 0, 1],]
-
-stars = np.load("stars.npy")
-labeled = label(stars)
 
 er = binary_erosion(labeled, mask)
 er = label(er)
