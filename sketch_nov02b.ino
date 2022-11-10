@@ -5,9 +5,10 @@
 #define DOT_DURATION 1
 #define TU 100
 
-String CODES[] = {".-", "--.."};
-char LETTERS[] = {'A', 'Z'};
-int NLETTRERS = 2;
+String CODES[] = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--..", " "};
+char LETTERS[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' '};
+int NLETTERS = 27;
+String s_code=" ";
 
 void setup() {
   Serial.begin(9600);
@@ -27,19 +28,29 @@ void loop() {
   }
 }
 void send_letter(String code){
-  int code_len = code.length();
-  for(int i =0; i<code_len; i++){
-    char symbol = code[i];
-    if(symbol == '.'){
-      digitalWrite(DATA_PIN, DATA_LEVEL);
-      delay(TU);
-    }
-    if(symbol == '-'){
-      digitalWrite(DATA_PIN, DATA_LEVEL);
-      delay(DASH_DURATION * TU);
-    }
+  if (code==" "){
+    s_code=" ";
     digitalWrite(DATA_PIN, SPACE_LEVEL);
-    delay(TU);
+    delay((DASH_DURATION+1)*TU);
+  }else{
+    int code_len = code.length();
+    for(int i = 0; i < code_len; i++){
+      char symbol = code[i];
+      if(s_code!=" "){
+        digitalWrite(DATA_PIN, SPACE_LEVEL);
+        delay(TU);
+      }
+      if (symbol=='.'){
+        digitalWrite(DATA_PIN, DATA_LEVEL);
+        delay(DOT_DURATION*TU);
+      }
+      if (symbol=='-'){
+        digitalWrite(DATA_PIN, DATA_LEVEL);
+        delay(DASH_DURATION*TU);
+      }
+      last_code=symbol;
+    }
+    last_code=" ";
+    delay(DASH_DURATION*TU);
   }
-  delay((DASH_DURATION - 1) * TU);
 }

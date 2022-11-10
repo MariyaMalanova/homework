@@ -1,3 +1,5 @@
+//input
+
 #define DATA_PIN 2
 #define DATA_LEVEL LOW
 #define SPACE_LEVEL HIGH
@@ -6,17 +8,19 @@
 #define DASH_DURATION 3 
 #define DOT_DURATION 1
 #define TU 100
+#define DURATION 7
 
 long start_data, start_space;
 long duration[20];
 bool color[20];
 int index = 0;
 int previos = SPACE_LEVEL;
-String CODES[] = {".-", "--.."};
-char LETTERS[] = {'A', 'Z'};
-int NLETTRERS = 2;
+String CODES[] = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+char LETTERS[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' '};
+int NLETTERS = 27;
 
 void setup() { 
+   Serial.begin(9600);
    pinMode(DATA_PIN, INPUT);
    
 }
@@ -24,32 +28,33 @@ void setup() {
 void loop() {
     fill_array();
     decode_letter();
-    Serial.begin(9600);
   }
 
 void decode_letter(){
-  for(int i=0; i<index; i++){
-      if (duration[i] == DASH_DURATION and color[i] == SPACE){
-        String code = "";
-        for (int j = 0; j<i; j++){
-          if(duration[j] == DASH_DURATION and color[j] == DATA){
-             code += '-';
-          }
-          if(duration[j] == DASH_DURATION and color[j] == DATA){
-             code += '.';
-          }
-          duration[j] = 0;
+  for(int i = 0; i<index; i++){
+    if (duration[i] >= DASH_DURATION && color[i] == SPACE){
+      String code = "";
+      for(int j=0; j<i; j++){
+        if(duration[j] == DASH_DURATION && color[j] == DATA){
+         code+='-';
         }
-        duration[i] = 0;
-        for (int iletter = 0; iletter < NLETTRERS; iletter++){
-          if (code == CODES[iletter]){
-            Serial.println(LETTERS[iletter]);
-          }
+        if(duration[j] == DOT_DURATION && color[j] == DATA){
+         code+='.';
+        }
+        duration[j] = 0;
+      }
+      for(int iletter=0; iletter<NLETTERS; iletter++){
+        if (code==CODES[iletter]){
+          Serial.println(LETTERS[iletter]);
         }
       }
     }
-    index = 0;
+    if (duration[i]==DURATION && color[i] == SPACE){
+      Serial.println(' ');
+    }
+  }
 }
+
 void fill_array(){
   int current = digitalRead(DATA_PIN);
   if (current == DATA_LEVEL and previos == SPACE_LEVEL){
