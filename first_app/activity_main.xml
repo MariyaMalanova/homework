@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/numA"
-        android:ems="10"/>
+        android:inputType="number"/>
     <EditText
         android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/numB"
-        android:ems="10"/>
+        android:inputType="number"/>
     <TextView
         android:textSize="30sp"
         android:layout_width="match_parent"
