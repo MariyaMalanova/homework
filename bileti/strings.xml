@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">bileti</string>
+    <string-array name="citiesOuts">
+        <item>Москва</item>
+        <item>Владивосток</item>
+        <item>Красноярск</item>
+        <item>Сыктывкар</item>
+        <item>Ананас</item>
+    </string-array>
+    <item name="citiesOuts" type="id" />
+    <item name="citiesIn" type="id" />
+    <string-array name="citiesIn">
+        <item>Хареты</item>
+        <item>Иркутск</item>
+        <item>Краснодар</item>
+        <item>Ижевск</item>
+        <item>Крым</item>
+        <item>Яблоко</item>
+    </string-array>
+</resources>

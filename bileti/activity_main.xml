@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="40dp"
+    android:background="@android:color/holo_blue_light"
+    tools:ignore="ExtraText">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12pt"
+        android:text="Город"
+        android:textColor="@android:color/background_light"
+        android:textSize="32dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/citiesOuts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="32dp"
+            android:layout_margin="3pt"
+            android:layout_weight="1"
+            android:background="@color/colorLightBlue"
+            android:padding="3pt"
+            android:spinnerMode="dropdown"
+            android:textColor="@android:color/background_light"
+            android:textSize="24dp" />
+
+        <Spinner
+            android:id="@+id/citiesIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="32dp"
+            android:padding="3pt"
+            android:layout_margin="3pt"
+            android:layout_weight="1"
+            android:background="@color/colorLightBlue"
+            android:textColor="@android:color/background_light"
+            android:textSize="24dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12pt"
+        android:layout_marginBottom="5pt"
+        android:text="Дата"
+        android:textSize="32dp"
+        android:textColor="@android:color/background_light"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3pt"
+            android:layout_margin="3pt"
+            android:layout_weight="1"
+            android:background="@color/colorLightBlue"
+            android:hint="Введите дату и время"
+            android:inputType="datetime"
+            android:textColor="@android:color/background_light" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3pt"
+            android:layout_margin="3pt"
+            android:layout_weight="1"
+            android:background="@color/colorLightBlue"
+            android:hint="Введите дату и время"
+            android:inputType="datetime"
+            android:textColor="@android:color/background_light"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12pt"
+        android:text="Пассажиры"
+        android:textSize="32dp"
+        android:textColor="@android:color/background_light"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8pt"
+        android:layout_weight="0"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_marginRight="20pt"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5pt"
+                android:layout_weight="1"
+                android:text="Взрослый"
+                android:textSize="24dp"
+                android:textColor="@android:color/background_light"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3pt"
+                android:layout_marginLeft="5pt"
+                android:layout_marginBottom="3pt"
+                android:layout_weight="1"
+                android:text="Детский"
+                android:textSize="24dp"
+                android:textColor="@android:color/background_light"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3pt"
+                android:layout_margin="3pt"
+                android:layout_weight="1"
+                android:background="@color/colorLightBlue"
+                android:hint="Введите число"
+                android:inputType="number"
+                android:textColor="@android:color/background_light"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3pt"
+                android:layout_margin="3pt"
+                android:layout_weight="1"
+                android:background="@color/colorLightBlue"
+                android:hint="Введите число"
+                android:inputType="number" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/resert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:onClick="Далее"
+        android:text="Далее"
+        android:textColor="@android:color/holo_blue_light" />
+
+</LinearLayout>
