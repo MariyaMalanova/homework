@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">eeeee</string>
+    <string-array name="peopleName">
+        <item>Алексей</item>
+        <item>Андрей</item>
+        <item>Поп</item>
+        <item>Артем</item>
+        <item>Александр</item>
+        <item>Антон</item>
+    </string-array>
+
+    <string-array name="peopleSurname">
+        <item>Васюткин</item>
+        <item>Иванов</item>
+        <item>Петров</item>
+        <item>Светлов</item>
+        <item>Ильин</item>
+        <item>Маланов</item>
+        <item>Румын</item>
+    </string-array>
+</resources>
