@@ -18,8 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val lvPeople = findViewById<ListView>(R.id.people)
-
-        // TODO: СЃРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ СЃРїРёСЃРѕРє РїРµСЂСЃРѕРЅ РёР· СЃР»СѓС‡Р°Р№РЅС‹С… СЃРѕС‡РµС‚Р°РЅРёР№ РёРјС‘РЅ Рё С„Р°РјРёР»РёР№
+        
         peopleName = resources.getStringArray(R.array.peopleName)
         peopleSurname = resources.getStringArray(R.array.peopleSurname)
 
